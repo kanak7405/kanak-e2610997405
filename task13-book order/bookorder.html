@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Readers' Haven - Book Registration &amp; Order Form</title>
+  </head>
+  <body>
+
+    <h1 align="center">Readers' Haven &ndash; Book Registration &amp; Order Form</h1>
+
+    <!-- Task 1: form with action and target.
+         enctype is needed for the file upload (Task 10). -->
+    <form action="https://httpbin.org/post" method="post" target="_blank" enctype="multipart/form-data">
+
+      <!-- Task 9: hidden field with a fixed value -->
+      <input type="hidden" name="form_title" value="Readers Haven Book Order">
+
+      <h2>Personal Information</h2>
+
+      <!-- Tasks 2 and 3: personal fields with placeholders -->
+      <p>
+        <label for="name">Customer Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+      </p>
+
+      <p>
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+      </p>
+
+      <p>
+        <label for="mobile">Mobile Number:</label><br>
+        <input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile number"
+               pattern="[0-9]{10}" maxlength="10" required>
+      </p>
+
+      <p>
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" placeholder="Enter your age" min="10" max="100">
+      </p>
+
+      <p>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" placeholder="Minimum 6 characters"
+               minlength="6" required>
+      </p>
+
+      <hr>
+
+      <h2>Book Details</h2>
+
+      <!-- Task 5: required drop-down list -->
+      <p>
+        <label for="category">Favorite Book Category:</label><br>
+        <select id="category" name="category" required>
+          <option value="">-- Select a category --</option>
+          <option value="Fiction">Fiction</option>
+          <option value="Science">Science</option>
+          <option value="History">History</option>
+          <option value="Children's Books">Children's Books</option>
+        </select>
+      </p>
+
+      <!-- Task 6: text field and number input with a minimum -->
+      <p>
+        <label for="title">Book Title:</label><br>
+        <input type="text" id="title" name="title" placeholder="Enter the book title" required>
+      </p>
+
+      <p>
+        <label for="quantity">Quantity:</label><br>
+        <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+      </p>
+
+      <hr>
+
+      <h2>Payment and Services</h2>
+
+      <!-- Task 7: radio buttons (same name, so only one can be selected) -->
+      <p>
+        Preferred Payment Method:<br>
+        <input type="radio" id="cod" name="payment" value="Cash on Delivery" required>
+        <label for="cod">Cash on Delivery</label>
+
+        <input type="radio" id="online" name="payment" value="Online Payment">
+        <label for="online">Online Payment</label>
+      </p>
+
+      <!-- Task 8: checkboxes (multiple can be selected) -->
+      <p>
+        Additional Services:<br>
+        <input type="checkbox" id="gift" name="services" value="Gift Wrapping">
+        <label for="gift">Gift Wrapping</label>
+
+        <input type="checkbox" id="bookmark" name="services" value="Bookmark">
+        <label for="bookmark">Bookmark</label>
+
+        <input type="checkbox" id="express" name="services" value="Express Delivery">
+        <label for="express">Express Delivery</label>
+
+        <input type="checkbox" id="card" name="services" value="Greeting Card">
+        <label for="card">Greeting Card</label>
+      </p>
+
+      <hr>
+
+      <h2>Delivery Details</h2>
+
+      <!-- Task 4: date and time input types -->
+      <p>
+        <label for="deliverydate">Delivery Date:</label><br>
+        <input type="date" id="deliverydate" name="deliverydate" required>
+      </p>
+
+      <p>
+        <label for="deliverytime">Preferred Delivery Time:</label><br>
+        <input type="time" id="deliverytime" name="deliverytime">
+      </p>
+
+      <!-- Task 11: textareas for address and instructions -->
+      <p>
+        <label for="address">Delivery Address:</label><br>
+        <textarea id="address" name="address" rows="4" cols="40"
+                  placeholder="House no., street, city, state and PIN code" required></textarea>
+      </p>
+
+      <p>
+        <label for="instructions">Special Instructions:</label><br>
+        <textarea id="instructions" name="instructions" rows="4" cols="40"
+                  placeholder="Any special instructions for delivery"></textarea>
+      </p>
+
+      <!-- Task 10: file upload with an accept attribute -->
+      <p>
+        <label for="reference">Upload Reference Image / Document (optional):</label><br>
+        <input type="file" id="reference" name="reference" accept=".pdf,.jpg,.jpeg,.png">
+      </p>
+
+      <!-- Task 12: Submit and Reset using the button element -->
+      <p>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </p>
+
+    </form>
+
+  </body>
+</html>

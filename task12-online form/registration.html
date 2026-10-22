@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Online Course Registration</title>
+  </head>
+  <body>
+
+    <h1 align="center">Online Course Registration</h1>
+
+    <!-- Task 1: form with action and target.
+         enctype is needed for the file upload (Task 10). -->
+    <form action="https://httpbin.org/post" method="post" target="_blank" enctype="multipart/form-data">
+
+      <!-- Task 7: hidden field with a fixed value -->
+      <input type="hidden" name="form_title" value="Online Course Registration">
+
+      <!-- Tasks 2, 3, 11: text fields with label (for/id), placeholder and required -->
+      <p>
+        <label for="name">Student Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+      </p>
+
+      <p>
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+      </p>
+
+      <p>
+        <label for="mobile">Mobile Number:</label><br>
+        <input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile number"
+               pattern="[0-9]{10}" maxlength="10" required>
+      </p>
+
+      <p>
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" placeholder="Enter your age" min="10" max="80">
+      </p>
+
+      <p>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" placeholder="Minimum 6 characters"
+               minlength="6" required>
+      </p>
+
+      <!-- Task 8: date and time input types -->
+      <p>
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob">
+      </p>
+
+      <p>
+        <label for="classtime">Preferred Class Time:</label><br>
+        <input type="time" id="classtime" name="classtime" value="10:00">
+      </p>
+
+      <!-- Task 4: radio buttons (same name, so only one can be selected) -->
+      <p>
+        Gender:<br>
+        <input type="radio" id="male" name="gender" value="Male" required>
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label>
+
+        <input type="radio" id="other" name="gender" value="Other">
+        <label for="other">Other</label>
+      </p>
+
+      <!-- Task 5: checkboxes (multiple can be selected) -->
+      <p>
+        Skills:<br>
+        <input type="checkbox" id="html" name="skills" value="HTML">
+        <label for="html">HTML</label>
+
+        <input type="checkbox" id="css" name="skills" value="CSS">
+        <label for="css">CSS</label>
+
+        <input type="checkbox" id="js" name="skills" value="JavaScript">
+        <label for="js">JavaScript</label>
+
+        <input type="checkbox" id="python" name="skills" value="Python">
+        <label for="python">Python</label>
+      </p>
+
+      <!-- Task 6: mandatory drop-down list -->
+      <p>
+        <label for="course">Select Course:</label><br>
+        <select id="course" name="course" required>
+          <option value="">-- Select a course --</option>
+          <option value="Web Development">Web Development</option>
+          <option value="Python Programming">Python Programming</option>
+          <option value="Data Analytics">Data Analytics</option>
+          <option value="Digital Marketing">Digital Marketing</option>
+        </select>
+      </p>
+
+      <!-- Task 9: textarea for multi-line input -->
+      <p>
+        <label for="address">Address / Additional Information:</label><br>
+        <textarea id="address" name="address" rows="5" cols="40"
+                  placeholder="Write your address or any additional information here"></textarea>
+      </p>
+
+      <!-- Task 10: file upload -->
+      <p>
+        <label for="document">Upload Document or Photograph:</label><br>
+        <input type="file" id="document" name="document" accept=".pdf,.jpg,.jpeg,.png">
+      </p>
+
+      <!-- Task 12: Submit and Reset using the input element -->
+      <p>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+      </p>
+
+    </form>
+
+  </body>
+</html>
